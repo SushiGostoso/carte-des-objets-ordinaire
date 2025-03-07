@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<title>
+Habiter la Ville | Nancy | Atelier ARTEM
+</title>
+<head>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main>
+        <!-- Contêiner principal com o título e a descrição -->
+        <header>
+            <div id="siteTitle">
+                <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+                Carte des Objets Ordinaires
+            </div>
+            <a id="siteSubTitle" href="#space">Carte</a>
+        </header>
+        
+        <div class="container">
+            <div class="image-container" data-index="0">
+                <div class="image-wrapper">
+                    <img src="Icon pour les Markers\chien-dessin-base.png" alt="Image 1">
+                    <div class="text">La ville n'est pas qu'un endroit de passage.</div>
+                </div>
+            </div>
+            <div class="image-container" data-index="1">
+                <div class="image-wrapper">
+                    <img src="Icon pour les Markers\Point-Intérrogation-dessin-base2.png" alt="Image 2">
+                    <div class="text">Il faudrait qu'on ai des yeux plus attentifs.</div>
+                </div>
+            </div>
+            <div class="image-container" data-index="2">
+                <div class="image-wrapper">
+                    <img src="Icon pour les Markers\Poubelle dessin base2.png" alt="Image 3">
+                    <div class="text">Leur beauté est cachée mais ne disparaîtra pas.</div>
+                </div>
+            </div>
+        </div>
+        <div id="space"></div>
+        <div class="map">
+            <div id="googleMap"></div>
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBjUx8xFcNuCLVKGyLNl9r1Rf59tyvE4zA&callback=initMap" async defer></script>
+            <script src="script.js"></script>
+        </div>
+
+        <!-- Simulação de conteúdo para rolar a página -->
+        <footer>
+            <div class="box1">La cartographie nous permet de comprendre l'espace, mais cette carte, en particulier, m'a fait comprendre le temps vécu à Nancy. Des yeux attentifs nous permettent de voir la beauté des petits moments et développent notre sens critique.</div>
+        </footer>
+    </main>
+</body>
+</html>
