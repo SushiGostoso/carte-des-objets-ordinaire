@@ -1,0 +1,307 @@
+body {
+    height: 200%;
+    width: 100%;
+    background-color: #ffffff; /* Cor cinza claro */
+    scroll-behavior: smooth;
+}
+
+main {
+    padding-top: 0%;
+}
+
+/* Estilo do contêiner principal */
+header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 20vh;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    padding: 10px 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+#siteTitle {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 3rem;
+    text-align: center;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: move-left-right 5s linear infinite alternate;
+}
+
+/* Estilo dos links de navegação no header */
+header a {
+    color: black;
+    text-decoration: none;
+    font-family: 'Inverse Mono', monospace;
+    font-size: 2rem;
+    padding-right: 10px;
+}
+
+header a:hover {
+    text-decoration: underline;
+    color: rgb(250, 86, 250);
+}
+
+/* Definindo a animação de mover para a esquerda e para a direita */
+@keyframes move-left-right {
+    0% {
+        transform: translateX(0%);
+    }
+    50% {
+        transform: translateX(10%);
+    }
+    100% {
+        transform: translateX(-10%);
+    }
+}
+
+@keyframes move-rightleft {
+    0% {
+        transform: translateX(100%);
+    }
+    50% {
+        transform: translateX(10%);
+    }
+    100% {
+        transform: translateX(-10%);
+    }
+}
+
+/* **Alteração: Ajuste do container para responsividade** */
+.container {
+    height: 85vh; /* **Antes 85vh, agora auto para se adaptar melhor** */
+    display: flex;
+    flex-direction: row; /* **Antes era row, agora column para melhorar em telas pequenas** */
+    gap: 100px;
+    row-gap: 0px;
+    padding-top: 20vh;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 15vw; /* **Reduzido para melhor adaptação** */
+    padding-right: 15vw; /* **Reduzido para melhor adaptação** */
+}
+
+/* Efeito de flip na imagem */
+.image-container {
+    position: relative;
+    width: 150px;
+    height: 180px;
+    perspective: 1000px;
+}
+
+.image-wrapper {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease-in-out;
+}
+
+.image-wrapper img, .image-wrapper .text {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+}
+
+.image-wrapper img {
+    display: block;
+}
+
+.image-wrapper .text {
+    background-color: white;
+    font-family: 'Press Start 2P', monospace;
+    color: rgb(250, 86, 250);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    transform: rotateY(180deg);
+    padding: 10px 10px;
+    text-align: center;
+}
+
+.image-container:hover .image-wrapper {
+    transform: rotateY(180deg);
+}
+
+/* Para navegadores que não suportam ::-webkit-scrollbar */
+html {
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+}
+
+#space {
+    height: 23vh;
+}
+
+.map {
+    height: 77vh;
+}
+
+#googleMap {
+    width: 100%;
+    height: 100%;
+}
+
+#title-1 {
+    font-family: Trattatello;
+    font-size: 40px;
+    text-align: center;
+}
+
+#title-2 {
+    font-family: Trattatello;
+    font-size: 35px;
+    text-align: center;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Estilo do título */
+h1 {
+    font-size: 3em;
+    margin: 0;
+}
+
+/* Estilo do texto explicativo */
+.description {
+    font-size: 1.2em;
+    margin-top: 10px;
+    color: #555;
+}
+
+/* Criando a "sticky" header */
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: white;
+    z-index: 1000;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+}
+
+/* Ajuste do footer */
+footer {
+    display: flex;
+    flex-direction: column;
+    height: 85vh;
+    padding-top: 15vh;
+    background-color: white;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10vw; /* **Antes 300px, agora 10vw para melhor adaptação** */
+}
+
+.box1 {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 1.0em;
+    text-align: center;
+    line-height: 1.5;
+    color: #333;
+    padding: 10px;
+    border-width: 6px;
+    border-style: dashed;
+    border-color: #000;
+    animation: rotacionar 3s ease-in-out infinite;
+}
+
+@keyframes rotacionar {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(10deg); }
+    75% { transform: rotate(-10deg); }
+}
+
+.box1:hover {
+    color: rgb(250, 86, 250);
+    border-style: dotted;
+    border-color: rgb(250, 86, 250);
+}
+
+/* **Media Query para tablets e celulares (menor que 768px)** */
+@media (max-width: 768px) {
+    .container {
+        padding: 15vh 2vw; /* **Redução do espaçamento lateral** */
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    header {
+        height: 12vh; /* **Redução da altura do cabeçalho** */
+        flex-direction: column; /* **Empilhar elementos no header** */
+        text-align: center;
+    }
+
+    #siteTitle {
+        font-size: 1.5rem; /* **Redução do tamanho da fonte do título** */
+    }
+
+    #siteSubTitle{
+        font-size: 1.0rem;
+    }
+    #space{
+        height: 15vh;
+    }
+    .image-container {
+        width: 150px;
+        height: 180px;
+        perspective: 1000px;
+    }
+
+    .map{
+        height: 85vh;
+    }
+
+    footer {
+        padding: 0 5vw; /* **Redução do espaçamento lateral** */
+    }
+
+    .box1 {
+        font-size: 0.9em; /* **Redução do tamanho da fonte** */
+    }
+}
+
+/* **Media Query para celulares (menor que 480px)** */
+@media (max-width: 480px) {
+    .container {
+        padding: 5vh 2vw;
+    }
+
+    h2 {
+        font-size: 1.5rem; /* **Redução do tamanho do título** */
+    }
+
+    input[type="range"] {
+        width: 100%; /* **Ajuste para melhor aproveitamento do espaço** */
+    }
+
+    .image-container {
+        width: 100px; /* **Redução do tamanho das imagens** */
+        height: 120px;
+    }
+
+    .image-wrapper .text {
+        font-size: 1rem; /* **Tamanho menor para melhor adaptação** */
+    }
+
+    footer {
+        padding: 0 10px; /* **Menos espaço lateral** */
+    }
+}
