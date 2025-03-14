@@ -1,7 +1,7 @@
 function initMap() {
   var mapProp= {
     center:new google.maps.LatLng(48.685338616197354,6.183894494385265), //Nancy
-    zoom:11.5,
+    zoom:12.5,
     streetViewControl: false,
     mapTypeControl: false, 
     toggleFullScreen: false,
@@ -315,7 +315,8 @@ function initMap() {
     { lat: 48.697721, lng: 6.174360, title: "L'inattendu", description: "Nancy a toujours des endroits que l'on ne connaît pas.", images: ["Photos pour les Markers/L'inattendu.jpeg"]}
   ];
   var locations_poubelle = [
-    { lat: 48.693820, lng: 6.193754, title: "La poubelle flexible", description: "Cette poubelle a vraiment une belle vue.", images:["Photos pour les Markers/La poubelle flexible1.jpeg", "Photos pour les Markers/La poubelle flexible2.jpeg"]}
+    { lat: 48.693820, lng: 6.193754, title: "La poubelle flexible", description: "Cette poubelle a vraiment une belle vue.", images:["Photos pour les Markers/La poubelle flexible1.jpeg", "Photos pour les Markers/La poubelle flexible2.jpeg"]},
+    { lat: 48.680185, lng: 6.181398, title: "C'est un banc ou une poubelle?", description: "L'impossibilité de s'asseoir si proche de ces poubelles gigantesques m'a fait réfléchir à la définition de cet objet. Aujourd'hui, j'ai trouvé un pot de nourriture en dessous, et la réponse est devenue plus claire.", images: ["Photos pour les Markers/C'est un Banc ou une Poubelle.jpeg"]}
   ];
   var locations_jeu = [
     { lat: 48.67957625909358, lng: 6.170688443274954, title: "Jeu pour les enfants?", description: "Les endroits comme ça me font souvenir ma ville où je beaucoup joué dans les Terrains de jeu.", images:[]},
@@ -332,7 +333,14 @@ function initMap() {
     { lat: 48.677392, lng: 6.192124, title: "Maison des Trains", description: "", images: ["Photos pour les Markers/Maison des Trains.jpeg"]},
     { lat: 48.699239, lng: 6.189570, title: "Je suis où?", description: "C'est bizarre d'imaginer des bateaux à Nancy.", images: ["Photos pour les Markers/Je suis où.jpeg"]},
     { lat: 48.691627, lng: 6.194893, title: "Courir?", description: "Il faut vraiment avoir l'envie de courir ici, parce que les chaussures vont être sale après.", images: ["Photos pour les Markers/Courir.jpeg"]},
-    { lat: 48.693099, lng: 6.193743, title: "L'After Film", description: "Après avoir regardé Les Tuche au cinéma, je fais ma première promenade le long de la Meurthe.", images: ["Photos pour les Markers/Mes amis Inter2.jpeg"]}
+    { lat: 48.693099, lng: 6.193743, title: "L'After Film", description: "Après avoir regardé Les Tuche au cinéma, je fais ma première promenade le long de la Meurthe.", images: ["Photos pour les Markers/Mes amis Inter2.jpeg"]},
+    { lat: 48.692327, lng: 6.176966, title: "Pop Art", description: "On marche et on regarde des murs soit vides et sans couleur, soit pleins d'annonces. Rien contre les publicités, au moins elles ajoutent un peu de couleur à cet endroit.", images: ["Photos pour les Markers/Pop Art.jpeg"]},
+    { lat: 48.696828, lng: 6.171833, title: "La Cheminée", description: "À quoi servait-elle avant?", images: ["Photos pour les Markers/La Cheminée1.jpeg", "Photos pour les Markers/La Cheminée2.jpeg"]},
+    { lat: 48.685103, lng: 6.186934, title: "L'histoire", description: "Nancy est remplie d'histoire qui se mélange avec les rues. C'est impressionnant.", images: ["Photos pour les Markers/L'histoire.jpeg"]},
+    { lat: 48.691083, lng: 6.174912, title: "Des Artistes Inconnus", description: "", images: ["Photos pour les Markers/Des Artistes Inconnus.jpeg"]},
+    { lat: 48.692188, lng: 6.194309, title: "Sommes-nous à Nancy?", description: "", images: ["Photos pour les Markers/Sommes nous à Nancy1.jpeg", "Photos pour les Markers/Sommes nous à Nancy2.jpeg"]},
+    { lat: 48.679908, lng: 6.181053, title: "L'unique Fusca", description: "La Coccinelle est la voiture la plus vendue au monde, et c'est la première fois que je l'ai vue à Nancy. Au Brésil, par contre, on retrouve cette voiture partout. On l'appelle 'Fusca'.", images: ["Photos pour les Markers/L'unique Fusca.jpeg"]},
+    { lat: 48.690543, lng: 6.173234, title: "Les lignes", description: "Ces lignes qui pointent vers l'horizon contribuent également à amener des étudiants venus de toute la France.", images: ["Photos pour les Markers/Les lignes.jpeg"]}
   ];
   var locations_chien = [
     { lat: 48.681430118256344, lng: 6.171292524104956, title: "Toilette pour les Chiens", description: "Je suis arrivé à cet endroit et je ne savait pas qu'est-ce que c'était, mais après être entré, j'ai découvert.", images:[]},
@@ -376,7 +384,7 @@ function initMap() {
       infoWindow.setContent(content);
       infoWindow.open(map, marker);
   
-      // Aguarde um pouco para garantir que o InfoWindow foi inserido no DOM
+      /*// Aguarde um pouco para garantir que o InfoWindow foi inserido no DOM
       setTimeout(() => {
         var infoDiv = document.getElementById("info-window");
   
@@ -385,7 +393,7 @@ function initMap() {
             infoWindow.close();
           });
         }
-      }, 100);
+      }, 100);*/
     });
   });
   locations_chien.forEach(location => {
@@ -417,7 +425,7 @@ function initMap() {
       infoWindow.setContent(content);
       infoWindow.open(map, marker);
   
-      // Aguarde um pouco para garantir que o InfoWindow foi inserido no DOM
+      /*// Aguarde um pouco para garantir que o InfoWindow foi inserido no DOM
       setTimeout(() => {
         var infoDiv = document.getElementById("info-window");
   
@@ -426,7 +434,7 @@ function initMap() {
             infoWindow.close();
           });
         }
-      }, 100);
+      }, 100);*/
     });
   });
   locations_jeu.forEach(location => {
@@ -458,7 +466,7 @@ function initMap() {
       infoWindow.setContent(content);
       infoWindow.open(map, marker);
   
-      // Aguarde um pouco para garantir que o InfoWindow foi inserido no DOM
+      /*// Aguarde um pouco para garantir que o InfoWindow foi inserido no DOM
       setTimeout(() => {
         var infoDiv = document.getElementById("info-window");
   
@@ -467,7 +475,7 @@ function initMap() {
             infoWindow.close();
           });
         }
-      }, 100);
+      }, 100);*/
     });
   });
   locations_point_interrogation.forEach(location => {
@@ -499,7 +507,7 @@ function initMap() {
       infoWindow.setContent(content);
       infoWindow.open(map, marker);
   
-      // Aguarde um pouco para garantir que o InfoWindow foi inserido no DOM
+      /*// Aguarde um pouco para garantir que o InfoWindow foi inserido no DOM
       setTimeout(() => {
         var infoDiv = document.getElementById("info-window");
   
@@ -508,7 +516,7 @@ function initMap() {
             infoWindow.close();
           });
         }
-      }, 100);
+      }, 100);*/
     });
   });
   locations_plant.forEach(location => {
@@ -540,7 +548,7 @@ function initMap() {
       infoWindow.setContent(content);
       infoWindow.open(map, marker);
   
-      // Aguarde um pouco para garantir que o InfoWindow foi inserido no DOM
+      /*// Aguarde um pouco para garantir que o InfoWindow foi inserido no DOM
       setTimeout(() => {
         var infoDiv = document.getElementById("info-window");
   
@@ -549,7 +557,7 @@ function initMap() {
             infoWindow.close();
           });
         }
-      }, 100);
+      }, 100);*/
     });
   });
   locations_poubelle.forEach(location => {
@@ -581,7 +589,7 @@ function initMap() {
       infoWindow.setContent(content);
       infoWindow.open(map, marker);
   
-      // Aguarde um pouco para garantir que o InfoWindow foi inserido no DOM
+      /*// Aguarde um pouco para garantir que o InfoWindow foi inserido no DOM
       setTimeout(() => {
         var infoDiv = document.getElementById("info-window");
   
@@ -590,7 +598,7 @@ function initMap() {
             infoWindow.close();
           });
         }
-      }, 100);
+      }, 100);*/
     });
   });
   marker.setMap(map);
@@ -613,3 +621,19 @@ links.forEach(link => {
         smoothScroll(link.getAttribute('href'));
     });
 })
+
+// Adiciona o efeito de rolagem que gira imagem
+window.addEventListener('scroll', function () {
+  const containers = document.querySelectorAll('.image-container');
+
+  containers.forEach(function (container) {
+      const rect = container.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+
+      if (rect.top >= 400 && rect.bottom <= (windowHeight-100)) {
+          container.querySelector('.image-wrapper').classList.add('rotated');
+      } else {
+          container.querySelector('.image-wrapper').classList.remove('rotated');
+      }
+  });
+});

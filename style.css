@@ -1,12 +1,7 @@
 body {
-    height: 200%;
     width: 100%;
     background-color: #ffffff; /* Cor cinza claro */
     scroll-behavior: smooth;
-}
-
-main {
-    padding-top: 0%;
 }
 
 /* Estilo do contêiner principal */
@@ -15,14 +10,13 @@ header {
     top: 0;
     right: 0;
     left: 0;
-    height: 20vh;
+    height: 10vh;
     background-color: white;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
     text-align: center;
-    padding: 10px 20px;
+    padding: 30px 0px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     z-index: 1000;
 }
@@ -35,7 +29,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    animation: move-left-right 5s linear infinite alternate;
+    animation: move-left-right 3s linear infinite alternate;
 }
 
 /* Estilo dos links de navegação no header */
@@ -43,8 +37,7 @@ header a {
     color: black;
     text-decoration: none;
     font-family: 'Inverse Mono', monospace;
-    font-size: 2rem;
-    padding-right: 10px;
+    font-size: 3.5rem;
 }
 
 header a:hover {
@@ -58,10 +51,10 @@ header a:hover {
         transform: translateX(0%);
     }
     50% {
-        transform: translateX(10%);
+        transform: translateX(6%);
     }
     100% {
-        transform: translateX(-10%);
+        transform: translateX(-6%);
     }
 }
 
@@ -77,26 +70,23 @@ header a:hover {
     }
 }
 
-/* **Alteração: Ajuste do container para responsividade** */
+/* Ajuste do container para responsividade */
 .container {
-    height: 85vh; /* **Antes 85vh, agora auto para se adaptar melhor** */
+    height: auto;
     display: flex;
-    flex-direction: row; /* **Antes era row, agora column para melhorar em telas pequenas** */
-    gap: 100px;
-    row-gap: 0px;
-    padding-top: 20vh;
-    justify-content: space-between;
+    flex-direction: column;
+    row-gap: 20vh;
+    padding-top: 35vh;
     align-items: center;
-    padding-left: 15vw; /* **Reduzido para melhor adaptação** */
-    padding-right: 15vw; /* **Reduzido para melhor adaptação** */
 }
 
-/* Efeito de flip na imagem */
+/* Efeito de flip na imagem controlado pelo scroll */
 .image-container {
     position: relative;
-    width: 150px;
-    height: 180px;
+    width: 500px;
+    height: 560px;
     perspective: 1000px;
+    padding-left: 1vh;
 }
 
 .image-wrapper {
@@ -121,18 +111,20 @@ header a:hover {
 
 .image-wrapper .text {
     background-color: white;
+    position: relative;
     font-family: 'Press Start 2P', monospace;
     color: rgb(250, 86, 250);
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.5rem;
+    font-size: 3.4rem;
     transform: rotateY(180deg);
     padding: 10px 10px;
     text-align: center;
 }
 
-.image-container:hover .image-wrapper {
+/* Classe aplicada quando o elemento deve rodar 180 graus */
+.image-wrapper.rotated {
     transform: rotateY(180deg);
 }
 
@@ -143,11 +135,23 @@ html {
 }
 
 #space {
-    height: 23vh;
+    height: 20vh;
+    position: relative;
+    text-align: center;
 }
 
+.consigne {
+    position: absolute;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 1.5rem;
+    bottom: 3vh;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    }
+
 .map {
-    height: 77vh;
+    height: 80vh;
 }
 
 #googleMap {
@@ -179,12 +183,7 @@ h1 {
     margin: 0;
 }
 
-/* Estilo do texto explicativo */
-.description {
-    font-size: 1.2em;
-    margin-top: 10px;
-    color: #555;
-}
+
 
 /* Criando a "sticky" header */
 .sticky {
@@ -201,17 +200,17 @@ h1 {
 footer {
     display: flex;
     flex-direction: column;
-    height: 85vh;
+    height: 100vh;
     padding-top: 15vh;
     background-color: white;
     align-items: center;
     justify-content: center;
-    padding: 0 10vw; /* **Antes 300px, agora 10vw para melhor adaptação** */
+    padding: 0 10vw;
 }
 
 .box1 {
     font-family: 'Press Start 2P', monospace;
-    font-size: 1.0em;
+    font-size: 2.7em;
     text-align: center;
     line-height: 1.5;
     color: #333;
@@ -224,84 +223,25 @@ footer {
 
 @keyframes rotacionar {
     0% { transform: rotate(0deg); }
-    25% { transform: rotate(10deg); }
-    75% { transform: rotate(-10deg); }
+    25% { transform: rotate(5deg); }
+    75% { transform: rotate(-5deg); }
 }
 
 .box1:hover {
     color: rgb(250, 86, 250);
     border-style: dotted;
     border-color: rgb(250, 86, 250);
+    animation: none;
 }
 
-/* **Media Query para tablets e celulares (menor que 768px)** */
-@media (max-width: 768px) {
-    .container {
-        padding: 15vh 2vw; /* **Redução do espaçamento lateral** */
-        flex-direction: row;
-        justify-content: center;
-        flex-wrap: wrap;
+@keyframes zoomInOut {
+    0% {
+        transform: scale(1); /* Tamanho normal no início */
     }
-
-    header {
-        height: 12vh; /* **Redução da altura do cabeçalho** */
-        flex-direction: column; /* **Empilhar elementos no header** */
-        text-align: center;
+    50% {
+        transform: scale(1.1); /* Zoom in, aumentando 20% */
     }
-
-    #siteTitle {
-        font-size: 1.5rem; /* **Redução do tamanho da fonte do título** */
-    }
-
-    #siteSubTitle{
-        font-size: 1.0rem;
-    }
-    #space{
-        height: 15vh;
-    }
-    .image-container {
-        width: 150px;
-        height: 180px;
-        perspective: 1000px;
-    }
-
-    .map{
-        height: 85vh;
-    }
-
-    footer {
-        padding: 0 5vw; /* **Redução do espaçamento lateral** */
-    }
-
-    .box1 {
-        font-size: 0.9em; /* **Redução do tamanho da fonte** */
-    }
-}
-
-/* **Media Query para celulares (menor que 480px)** */
-@media (max-width: 480px) {
-    .container {
-        padding: 5vh 2vw;
-    }
-
-    h2 {
-        font-size: 1.5rem; /* **Redução do tamanho do título** */
-    }
-
-    input[type="range"] {
-        width: 100%; /* **Ajuste para melhor aproveitamento do espaço** */
-    }
-
-    .image-container {
-        width: 100px; /* **Redução do tamanho das imagens** */
-        height: 120px;
-    }
-
-    .image-wrapper .text {
-        font-size: 1rem; /* **Tamanho menor para melhor adaptação** */
-    }
-
-    footer {
-        padding: 0 10px; /* **Menos espaço lateral** */
+    100% {
+        transform: scale(1); /* Retorna ao tamanho normal */
     }
 }
