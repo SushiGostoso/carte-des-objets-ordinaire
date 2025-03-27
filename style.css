@@ -121,6 +121,7 @@ header a:hover {
     transform: rotateY(180deg);
     padding: 10px 10px;
     text-align: center;
+    line-height: 1.5
 }
 
 /* Classe aplicada quando o elemento deve rodar 180 graus */
